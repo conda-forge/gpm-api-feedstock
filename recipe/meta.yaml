@@ -1,5 +1,5 @@
 {% set name = "gpm-api" %}
-{% set version = "0.2.11" %}
+{% set version = "0.2.12" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,13 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/gpm_api-{{ version }}.tar.gz
-  sha256: c18aa4e546f238356cc100337d0db42217f8bd2ff9d7825fcaa3aabffea73540
+  sha256: 7d18f8d62673e113faa85ff45fcd59415b0f6ac740c4b9962115a3bbc680a9d9
 
 build:
   entry_points:
-    - download_gpm_daily_data = gpm_api.scripts.download_gpm_daily_data:download_gpm_daily_data
-    - download_gpm_monthly_data = gpm_api.scripts.download_gpm_monthly_data:download_gpm_monthly_data
-    - download_gpm_files = gpm_api.scripts.download_gpm_files:download_gpm_files
+    - download_gpm_daily_data = gpm.scripts.download_gpm_daily_data:download_gpm_daily_data
+    - download_gpm_monthly_data = gpm.scripts.download_gpm_monthly_data:download_gpm_monthly_data
+    - download_gpm_files = gpm.scripts.download_gpm_files:download_gpm_files
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
@@ -27,21 +27,24 @@ requirements:
     - pip
   run:
     - python >=3.8
-    - xarray
+    - xarray <=2024.2.0
     - xarray-datatree
-    - h5py
     - netcdf4
     - dask-core
+    - distributed
+    - curl
     - tqdm
     - click
     - donfig
     - trollsift
-    - pyresample
-    - cartopy >=0.20.0
-    - curl
+    - cartopy >=0.22.0
+    - matplotlib-base >=3.8.3
+    - pyproj
+    - scipy
+    - pycolorbar
 test:
   imports:
-    - gpm_api
+    - gpm
   commands:
     - pip check
     - download_gpm_daily_data --help
@@ -52,7 +55,7 @@ test:
 
 about:
   home: https://github.com/ghiggi/gpm_api
-  summary: Python API for the Global Precipitation Mission Data Archive
+  summary: Python Package for the Global Precipitation Measurement (GPM) Mission Data Archive
   license: MIT
   license_file: LICENSE
 
