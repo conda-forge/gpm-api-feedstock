@@ -27,18 +27,21 @@ requirements:
     - pip
   run:
     - python >=3.8
-    - xarray
+    - xarray <=2024.2.0
     - xarray-datatree
-    - h5py
     - netcdf4
     - dask-core
+    - distributed
+    - curl
     - tqdm
     - click
     - donfig
     - trollsift
-    - pyresample
-    - cartopy >=0.20.0
-    - curl
+    - cartopy >=0.22.0
+    - matplotlib>=3.8.3
+    - pyproj
+    - scipy
+    - pycolorbar
 test:
   imports:
     - gpm_api
