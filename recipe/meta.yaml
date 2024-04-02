@@ -11,9 +11,9 @@ source:
 
 build:
   entry_points:
-    - download_gpm_daily_data = gpm_api.scripts.download_gpm_daily_data:download_gpm_daily_data
-    - download_gpm_monthly_data = gpm_api.scripts.download_gpm_monthly_data:download_gpm_monthly_data
-    - download_gpm_files = gpm_api.scripts.download_gpm_files:download_gpm_files
+    - download_gpm_daily_data = gpm.scripts.download_gpm_daily_data:download_gpm_daily_data
+    - download_gpm_monthly_data = gpm.scripts.download_gpm_monthly_data:download_gpm_monthly_data
+    - download_gpm_files = gpm.scripts.download_gpm_files:download_gpm_files
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
@@ -44,7 +44,7 @@ requirements:
     - pycolorbar
 test:
   imports:
-    - gpm_api
+    - gpm
   commands:
     - pip check
     - download_gpm_daily_data --help
@@ -55,7 +55,7 @@ test:
 
 about:
   home: https://github.com/ghiggi/gpm_api
-  summary: Python API for the Global Precipitation Mission Data Archive
+  summary: Python Package for the Global Precipitation Mission Data Archive
   license: MIT
   license_file: LICENSE
 
