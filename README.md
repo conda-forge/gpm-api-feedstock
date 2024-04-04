@@ -7,7 +7,7 @@ Home: https://github.com/ghiggi/gpm_api
 
 Package license: MIT
 
-Summary: Python API for the Global Precipitation Mission Data Archive
+Summary: Python Package for the Global Precipitation Measurement (GPM) Mission Data Archive
 
 Current build status
 ====================
