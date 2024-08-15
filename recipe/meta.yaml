@@ -16,7 +16,7 @@ build:
     - download_gpm_files = gpm.scripts.download_gpm_files:download_gpm_files
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -27,7 +27,7 @@ requirements:
     - pip
   run:
     - python >=3.8
-    - xarray <=2024.2.0
+    - xarray
     - xarray-datatree
     - netcdf4
     - dask-core
@@ -62,3 +62,4 @@ about:
 extra:
   recipe-maintainers:
     - ghiggi
+    - kmuehlbauer
