@@ -27,8 +27,12 @@ requirements:
     - pip
   run:
     - python >=3.8
-    - xarray <=2024.2.0
+    - xarray
     - xarray-datatree
+    - xoak
+    - numpy
+    - pandas
+    - pyyaml
     - netcdf4
     - dask-core
     - distributed
@@ -40,6 +44,8 @@ requirements:
     - cartopy >=0.22.0
     - matplotlib-base >=3.8.3
     - pyproj
+    - shapely
+    - geopandas
     - scipy
     - pycolorbar
 test:
