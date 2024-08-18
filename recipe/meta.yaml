@@ -1,5 +1,5 @@
 {% set name = "gpm-api" %}
-{% set version = "0.2.14" %}
+{% set version = "0.2.15" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/gpm_api-{{ version }}.tar.gz
-  sha256: 6b210655691586dd7bb1dd0dd98ba130a94bace4f8aef9310d07536d3769ac25
+  sha256: b47b14e5c762d88c0aa3d6b27d2eef7ebc2e3a6b22ec802de5a8e1e8dd054151
 
 build:
   entry_points:
@@ -27,8 +27,12 @@ requirements:
     - pip
   run:
     - python >=3.8
-    - xarray <=2024.2.0
+    - xarray
     - xarray-datatree
+    - xoak
+    - numpy
+    - pandas
+    - pyyaml
     - netcdf4
     - dask-core
     - distributed
@@ -40,6 +44,8 @@ requirements:
     - cartopy >=0.22.0
     - matplotlib-base >=3.8.3
     - pyproj
+    - shapely
+    - geopandas
     - scipy
     - pycolorbar
 test:
@@ -62,3 +68,4 @@ about:
 extra:
   recipe-maintainers:
     - ghiggi
+    - kmuehlbauer
