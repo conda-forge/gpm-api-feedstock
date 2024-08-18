@@ -69,6 +69,14 @@ else
         --suppress-variables ${EXTRA_CB_OPTIONS:-} \
         --clobber-file "${CI_SUPPORT}/clobber_${CONFIG}.yaml" \
         --extra-meta flow_run_id="${flow_run_id:-}" remote_url="${remote_url:-}" sha="${sha:-}"
+    
+    # inspect_artifacts was only added in conda-forge-ci-setup 4.6.0
+    ( startgroup "Inspecting artifacts" ) 2> /dev/null
+    
+    command -v inspect_artifacts >/dev/null 2>&1 && inspect_artifacts || echo "inspect_artifacts needs conda-forge-ci-setup >=4.6.0"
+    
+    ( endgroup "Inspecting artifacts" ) 2> /dev/null
+
     ( startgroup "Validating outputs" ) 2> /dev/null
 
     validate_recipe_outputs "${FEEDSTOCK_NAME}"
