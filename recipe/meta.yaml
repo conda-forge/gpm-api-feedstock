@@ -1,5 +1,5 @@
 {% set name = "gpm-api" %}
-{% set version = "0.2.15" %}
+{% set version = "0.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/gpm_api-{{ version }}.tar.gz
-  sha256: b47b14e5c762d88c0aa3d6b27d2eef7ebc2e3a6b22ec802de5a8e1e8dd054151
+  sha256: 6185747f6f9c7b39e79eb8ae8e041d5a3035779b852d434088096b373f0e5268
 
 build:
   entry_points:
@@ -47,7 +47,7 @@ requirements:
     - shapely
     - geopandas
     - scipy
-    - pycolorbar
+    - pycolorbar >=0.0.14
 test:
   imports:
     - gpm
