@@ -47,7 +47,7 @@ requirements:
     - shapely
     - geopandas
     - scipy
-    - pycolorbar
+    - pycolorbar >=0.0.14
 test:
   imports:
     - gpm
