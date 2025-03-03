@@ -27,8 +27,7 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - xarray
-    - xarray-datatree
+    - xarray >= 2025.01.0
     - xoak
     - numpy
     - pandas
@@ -47,7 +46,7 @@ requirements:
     - shapely
     - geopandas
     - scipy
-    - pycolorbar >=0.1.0
+    - pycolorbar >=0.1.2
 test:
   imports:
     - gpm
