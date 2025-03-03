@@ -27,7 +27,7 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - xarray >= 2025.01.0
+    - xarray >=2025.01.0
     - xoak
     - numpy
     - pandas
