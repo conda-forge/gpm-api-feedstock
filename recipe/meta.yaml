@@ -1,5 +1,5 @@
 {% set name = "gpm-api" %}
-{% set version = "0.3.2" %}
+{% set version = "0.3.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/gpm_api-{{ version }}.tar.gz
-  sha256: 2f6169a1e19b992934b1947b9b2b81ebf3c49a5f561b8e2730bfec7a804d7762
+  sha256: 2b885ef27a9b3481e7882f83028f13d7bff09f4b1991e86c93b1471df30ea215
 
 build:
   entry_points:
