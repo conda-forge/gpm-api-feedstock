@@ -27,10 +27,13 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - xarray >=2025.01.0
+    - xarray >=2026.01.0
     - xoak
-    - numpy
-    - pandas
+    - flox
+    - numbagg 
+    - bottleneck
+    - numpy >=2.4.0
+    - pandas >=2.3.3
     - pyyaml
     - netcdf4
     - dask-core
@@ -40,7 +43,7 @@ requirements:
     - click
     - donfig
     - trollsift
-    - cartopy >=0.22.0
+    - cartopy >=0.25.0
     - matplotlib-base >=3.8.3
     - pyproj
     - shapely
