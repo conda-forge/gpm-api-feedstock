@@ -1,5 +1,5 @@
 {% set name = "gpm-api" %}
-{% set version = "0.3.4" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/gpm_api-{{ version }}.tar.gz
-  sha256: 4c2b9233bacd8aeb7b19572414dce77d5dadc79d758a726295dc2d7a780dcd38
+  sha256: 125da4abe7545cbafbbe00f8751ddc26496746e6170375dc487a4fc96de57dd7
 
 build:
   entry_points:
@@ -27,10 +27,13 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - xarray >=2025.01.0
+    - xarray >=2026.01.0
     - xoak
-    - numpy
-    - pandas
+    - flox
+    - numbagg 
+    - bottleneck
+    - numpy >=2.4.0
+    - pandas >=2.3.3
     - pyyaml
     - netcdf4
     - dask-core
@@ -40,7 +43,7 @@ requirements:
     - click
     - donfig
     - trollsift
-    - cartopy >=0.22.0
+    - cartopy >=0.25.0
     - matplotlib-base >=3.8.3
     - pyproj
     - shapely
