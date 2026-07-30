@@ -44,7 +44,7 @@ requirements:
     - donfig
     - trollsift
     - cartopy >=0.25.0
-    - matplotlib-base >=3.8.3
+    - matplotlib-base >=3.10.0,<3.11.0
     - pyproj
     - shapely
     - geopandas
